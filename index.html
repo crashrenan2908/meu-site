@@ -2,60 +2,50 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Página com Texto e Áudio</title>
+  <title>Exploração em Lugar Nenhum</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      background-image: url('URL_DA_IMAGEM_AQUI');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Orbitron', sans-serif;
+      color: #ffffff;
+      text-shadow: 2px 2px 4px #000000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
     }
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    .texto {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 15px;
+      max-width: 800px;
+      font-size: 1.5em;
+      line-height: 1.6;
     }
-    textarea {
-      width: 100%;
-      height: 150px;
-      margin-bottom: 20px;
-      padding: 10px;
-      font-size: 16px;
-    }
+
     audio {
-      width: 100%;
-      margin-top: 10px;
+      display: none;
     }
+
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>📝 Seu Texto</h2>
-    <textarea placeholder="Digite seu texto aqui..."></textarea>
+  <audio autoplay loop>
+    <source src="URL_DO_AUDIO_AQUI" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
 
-    <h2>🎧 Seu Áudio</h2>
-    <input type="file" accept="audio/*">
-    <audio controls>
-      <source src="" type="audio/mpeg">
-      Seu navegador não suporta áudio.
-    </audio>
+  <div class="texto">
+    <p>
+      Bem-vindo à exploração! Eu sou o rover Rocket e acabei de pousar no planeta 'Lugar Nenhum'. É um mundo vivo, com uma superfície que se move sob meus pneus. Os habitantes, os 'Geomentes', usam suas antenas para moldar a terra com raios de luz, construindo suas cidades em harmonia com o planeta. Eles não bebem água, mas absorvem a energia da atmosfera. Eles nos mostraram que a vida não precisa de água para prosperar, mas sim de uma conexão profunda com o mundo em que se vive. E essa é apenas a ponta do iceberg...
+    </p>
   </div>
-
-  <script>
-    const fileInput = document.querySelector('input[type="file"]');
-    const audioPlayer = document.querySelector('audio');
-    const source = audioPlayer.querySelector('source');
-
-    fileInput.addEventListener('change', function() {
-      const file = this.files[0];
-      if (file) {
-        const url = URL.createObjectURL(file);
-        source.src = url;
-        audioPlayer.load();
-      }
-    });
-  </script>
 </body>
 </html>
